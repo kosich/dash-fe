@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 
 @Injectable()
-export class Title {
+export class HomeService {
 
   public value = 'Angular 2';
 

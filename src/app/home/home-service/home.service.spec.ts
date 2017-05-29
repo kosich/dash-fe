@@ -9,9 +9,9 @@ import {
   Http
 } from '@angular/http';
 import { MockBackend } from '@angular/http/testing';
-import { Title } from './title.service';
+import { HomeService } from './home.service';
 
-describe('Title', () => {
+describe('HomeService', () => {
   beforeEach(() => TestBed.configureTestingModule({
     providers: [
       BaseRequestOptions,
@@ -23,20 +23,20 @@ describe('Title', () => {
         },
         deps: [MockBackend, BaseRequestOptions]
       },
-      Title
+      HomeService
     ]}));
 
-  it('should have http', inject([ Title ], (title: Title) => {
-    expect(!!title.http).toEqual(true);
+  it('should have http', inject([ HomeService ], (homeService: HomeService) => {
+    expect(!!homeService.http).toEqual(true);
   }));
 
-  it('should get data from the server', inject([ Title ], (title: Title) => {
+  it('should get data from the server', inject([ HomeService ], (homeService: HomeService) => {
     spyOn(console, 'log');
     expect(console.log).not.toHaveBeenCalled();
 
-    title.getData();
+    homeService.getData();
     expect(console.log).toHaveBeenCalled();
-    expect(title.getData()).toEqual({ value: 'AngularClass' });
+    expect(homeService.getData()).toEqual({ value: 'AngularClass' });
   }));
 
 });

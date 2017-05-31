@@ -11,6 +11,12 @@
             >
                 <img src="https://res.cloudinary.com/siftery/image/upload/v1485783276/siftery-logo.svg" alt="Siftery"/>
             </a>
+
+            <a
+              [routerLink]=" ['./404'] "
+              routerLinkActive="active"
+              [routerLinkActiveOptions]= "{exact: true}"
+            >404</a>
         </div>
 
 
@@ -75,10 +81,6 @@
 
     </div>
 </nav>
-
-
-
-
 
 <main class="main-view">
     <router-outlet></router-outlet>

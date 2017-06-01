@@ -1,0 +1,101 @@
+[ng\:cloak],
+[ng-cloak],
+[data-ng-cloak],
+[x-ng-cloak],
+.ng-cloak,
+.x-ng-cloak {
+    display: none !important;
+}
+
+html,
+body {
+    color: $base-color;
+}
+
+body {
+    background-color: $light-gray;
+}
+
+a {
+    outline: none;
+    text-decoration: none;
+    color: $light-blue;
+
+    &:hover,
+    &:active,
+    &:focus {
+        color: $light-blue;
+        outline: none;
+        text-decoration: none;
+    }
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+    overflow: hidden;
+}
+
+b,
+strong {
+    font-weight: $font-weight-semibold;
+}
+
+var {
+    font-style: normal;
+}
+
+input,
+button {
+    outline: none;
+}
+
+// Lists
+
+ul,
+ol {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+dl {
+    margin-bottom: $small-spacing;
+
+    dt {
+        font-weight: 800;
+        margin-top: $small-spacing;
+    }
+
+    dd {
+        margin: 0;
+    }
+}
+
+// Tables
+
+table {
+    border-collapse: collapse;
+    font-feature-settings: "kern", "liga", "tnum";
+    margin: $small-spacing 0;
+    table-layout: fixed;
+    width: 100%;
+}
+
+th {
+    font-weight: $font-weight-semibold;
+    border-bottom: $base-border;
+    padding: $small-spacing 0;
+    text-align: left;
+}
+
+td {
+    border-bottom: $base-border;
+    padding: $small-spacing 0;
+}
+
+tr,
+td,
+th {
+    vertical-align: middle;
+}

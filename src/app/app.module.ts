@@ -28,7 +28,6 @@ import { HomeComponent } from './home';
 import { NoContentComponent } from './no-content';
 
 import '../styles/styles.scss';
-import '../styles/headings.css';
 
 // Application wide providers
 const APP_PROVIDERS = [

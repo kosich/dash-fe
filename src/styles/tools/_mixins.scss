@@ -1,0 +1,320 @@
+@charset "utf-8";
+
+//MEDIA MIXIN
+$small: 767px;
+$medium: 1200px;
+$large: 1600px;
+
+@mixin respond-to($media) {
+    @if $media == small-screens {
+        @media only screen and (max-width: $small) {
+            @content;
+        }
+    } @else if $media == medium-screens {
+        @media only screen and (max-width: $medium) {
+            @content;
+        }
+    } @else if $media == not-small-screens {
+        @media only screen and (min-width: 768px) {
+            @content;
+        }
+    } @else if $media == wide-screens {
+        @media only screen and (min-width: $large) {
+            @content;
+        }
+    }
+}
+
+@mixin content-item {
+    background: #fff;
+    border: $base-border;
+    border-radius: $base-border-radius;
+}
+
+@mixin scroll-y {
+    height: 100%;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+@mixin layout {
+    //@include scroll-y;
+    background-color: rgb(246, 247, 251);
+}
+
+@mixin container {
+    width: 100%;
+    position: relative;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: 0 auto;
+}
+
+@mixin inner-image {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    vertical-align: top;
+    display: block;
+    margin: 0 auto;
+}
+
+@mixin image-wrap-round {
+    position: relative;
+    z-index: 1;
+    border-radius: 50%;
+    text-align: center;
+    background-color: #ffffff;
+    padding: 5px;
+
+    &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        z-index: 5;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        border-radius: 50%;
+        border: $base-border;
+    }
+
+    svg,
+    img {
+        @include inner-image;
+        border-radius: 50%;
+    }
+}
+
+@mixin image-wrap-square {
+    position: relative;
+    z-index: 1;
+    border-radius: 5px;
+    text-align: center;
+    background-color: #ffffff;
+    padding: 5px;
+
+    &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        z-index: 5;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        border-radius: 5px;
+        border: $base-border;
+    }
+
+    svg,
+    img {
+        @include inner-image;
+        border-radius: 4px;
+    }
+}
+
+@mixin ellipsis($width: 100%) {
+    display: inline-block;
+    max-width: $width;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-wrap: normal;
+}
+
+@mixin multi-row-ellipsis($rows: 2) {
+    display: -webkit-box;
+    -webkit-line-clamp: $rows;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+@mixin menu-item-hover {
+    @include respond-to(not-small-screens) {
+        &:hover {
+            color: $base-color;
+            background: rgba(158, 178, 248, .17);
+            box-shadow: 3px 0 0 0 $light-blue inset;
+
+            .f-icon,
+            .fa {
+                color: $light-blue;
+            }
+        }
+    }
+}
+
+@mixin dropdown-item() {
+    border-radius: 0 !important;
+
+    a,
+    button,
+    address {
+        @include ellipsis;
+        border-radius: 0 !important;
+        display: block;
+        padding: 10px 20px;
+        line-height: 1.43;
+        background-color: transparent;
+        border: none;
+        width: 100%;
+        text-align: left;
+        user-select: none;
+        color: $base-color;
+
+        @include menu-item-hover;
+
+        img {
+            margin-right: 10px;
+        }
+    }
+
+    &.active {
+        a,
+        button,
+        address {
+            background-color: $light-blue;
+
+            span {
+                color: #ffffff;
+            }
+        }
+    }
+
+    &:first-child {
+        border-top: none;
+
+        a,
+        button,
+        address {
+            border-radius: 3px 3px 0 0;
+        }
+    }
+
+    &:last-child {
+        a,
+        button,
+        address {
+            border-radius: 0 0 3px 3px;
+        }
+    }
+}
+
+@mixin backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1005;
+    background: rgba(13, 52, 85, .9);
+    display: none;
+}
+
+@mixin close-icon($position: null, $top: null, $right: null, $padding: 2px, $font-size: 1rem) {
+    .material-icons {
+        position: $position;
+        top: $top;
+        right: $right;
+        padding: $padding;
+        border-radius: 50%;
+        font-size: $font-size;
+        color: #fff;
+        background-color: $base-color;
+        cursor: pointer;
+    }
+}
+
+@mixin article-text {
+    font-size: 1.8rem;
+    color: $base-color;
+    line-height: 32px;
+    margin-bottom: 30px;
+}
+
+@mixin flex-centered {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+//tab nav
+@mixin tab-nav-wrap {
+    border-bottom: $base-border;
+}
+
+@mixin tab-container {
+    .modal & {
+        margin: 0 -18%;
+
+        .is-mobile & {
+            margin: 0 -20px;
+        }
+    }
+
+    .tab-nav-wrap & {
+        margin: 0;
+    }
+}
+
+@mixin tab-nav {
+    display: flex;
+    //align-items: center;
+    //align-content: center;
+
+    * {
+        &:focus {
+            outline: none;
+        }
+    }
+}
+
+@mixin tab-nav-item {
+    font-weight: $font-weight-semibold;
+    font-size: 1.4rem;
+    color: $gray;
+    padding: 15px 10px;
+    margin: 0 14px;
+    display: flex;
+    align-items: center;
+
+    &:hover {
+        color: $light-blue;
+    }
+
+    &:focus {
+        color: $gray;
+    }
+
+    &.active {
+        color: $base-color;
+        box-shadow: 0 -2px 0 0 $light-blue inset;
+
+        &:focus {
+            color: $base-color;
+        }
+    }
+
+    &:first-child {
+        margin-left: 0;
+    }
+
+    &:last-child {
+        margin-right: 0;
+    }
+}
+
+@mixin tab-nav-link {
+    color: $gray;
+
+    &:hover {
+        color: $light-blue;
+    }
+
+    .active & {
+        color: $base-color;
+    }
+}

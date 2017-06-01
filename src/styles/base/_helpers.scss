@@ -1,0 +1,275 @@
+.clearfix {
+    @include clearfix;
+}
+
+.primary-text {
+    color: $light-blue !important;
+}
+
+.success-text {
+    color: $green !important;
+}
+
+.info-text {
+    color: $light-sky !important;
+}
+
+.warning-text {
+    color: $orange !important;
+}
+
+.alert-text {
+    color: $pink !important;
+}
+
+.muted-text {
+    color: $gray !important;
+}
+
+.light-text {
+    color: #a1a8b2 !important;
+}
+
+.base-text {
+    color: $base-color !important;
+}
+
+.bold-text {
+    font-weight: $font-weight-bold;
+}
+
+//labels
+
+.success-label {
+    color: #fff;
+    background-color: $green;
+    border-radius: 2px;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 5px;
+    padding: 5px;
+    font-size: 1.3rem;
+    font-weight: $font-weight-semibold;
+
+    &--large {
+        padding: 7px 10px;
+    }
+}
+
+.table-view {
+    display: table;
+    width: 100%;
+
+    &.__fixed {
+        table-layout: fixed;
+    }
+
+    .table-cell-view {
+        display: table-cell;
+    }
+}
+
+.fluid-table {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+.block {
+    display: block;
+}
+
+.relative {
+    position: relative;
+}
+
+.elastic-text-row {
+    word-wrap: break-word;
+}
+
+.solid-text-row {
+    white-space: nowrap;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.message-muted {
+    font-size: smaller;
+    font-style: italic;
+    color: $gray;
+}
+
+.visible {
+    visibility: visible !important;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.mobile-only {
+    display: none !important;
+
+    .is-mobile & {
+        display: block !important;
+    }
+}
+
+.web-only {
+    .is-mobile & {
+        display: none !important;
+    }
+}
+
+.ptb-20 {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.pt-5 {
+    padding-top: 5px;
+}
+
+.pt-15 {
+    padding-top: 15px;
+}
+
+.pb-30 {
+    padding-bottom: 30px;
+}
+
+.mr-10 {
+    margin-right: 10px;
+}
+
+.ml-20 {
+    margin-left: 20px;
+}
+
+.ml-10 {
+    margin-left: 10px;
+}
+
+.mb-0 {
+    margin-bottom: 0;
+}
+
+.mb-10 {
+    margin-bottom: 10px;
+}
+
+.mb-20 {
+    margin-bottom: 20px;
+}
+
+.mb-30 {
+    margin-bottom: 30px;
+}
+
+.mb-40 {
+    margin-bottom: 40px;
+}
+
+.mt-20 {
+    margin-top: 20px;
+}
+
+.mt-30 {
+    margin-top: 30px;
+}
+
+.mt-40 {
+    margin-top: 40px;
+}
+
+.mtb-40 {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.full-height {
+    height: 100%;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.semi-transparent {
+    opacity: .5;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.flex-center {
+    justify-content: center !important;
+}
+
+.flex-end {
+    justify-content: flex-end !important;
+}
+
+.align-flex-start {
+    align-self: flex-start;
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+//._mb-20 {
+//    margin-bottom: 20px;
+//}
+//
+//._m0 {
+//    margin: 0;
+//}
+
+.no-scroll {
+    overflow: hidden !important;
+}
+
+.flex-align {
+    &--left {
+        margin-right: auto;
+
+        &--mobile {
+            .is-mobile & {
+                margin-right: auto;
+            }
+        }
+    }
+
+    &--right {
+        margin-left: auto;
+    }
+
+    &--v-center {
+        display: flex;
+        align-items: center;
+    }
+}
+
+.case-lower {
+    text-transform: lowercase;
+}
+
+.no-select {
+    user-select: none;
+}
+
+.ellipsis {
+    @include ellipsis;
+}
+

@@ -1,0 +1,38 @@
+.main-view {
+  display: block;
+  min-height: calc(100vh - 52px);
+}
+
+.page-navbar + .main-view {
+  padding-top: 45px;
+}
+
+.layout {
+  padding-top: 40px;
+
+  &__content {
+    position: relative;
+    width: 100%;
+  }
+
+  &--dashboard {
+    padding-top: 0;
+    @include container;
+    padding-left: $sidebar-width !important;
+    padding-right: 0 !important;
+    z-index: 2;
+
+    .is-mobile & {
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+    }
+
+    .layout__content {
+      padding-top: 40px;
+
+      @include respond-to(not-small-screens) {
+        width: calc(100% - #{$sidebar-width});
+      }
+    }
+  }
+}

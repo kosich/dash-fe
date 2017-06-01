@@ -1,0 +1,74 @@
+$nav-button-color: #00838F;
+
+
+// Typography
+$base-font-family: "proxima-nova", sans-serif;
+$heading-font-family: "proxima-nova", sans-serif;
+
+// Font Sizes
+$base-font-size: 1.4rem;
+
+// Line height
+$base-line-height: 1.5;
+$heading-line-height: 1.2;
+
+//font weights
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-semibold: 600;
+$font-weight-bold: 800;
+
+
+// Other Sizes
+$base-border-radius: 3px;
+$base-spacing: $base-line-height * 1em;
+$small-spacing: $base-spacing / 2;
+$base-z-index: 0;
+$overlay-background-color: rgba(13, 52, 85, .9);
+
+// Colors from Styleguide
+$base-color: #3e4d60;
+$dark-blue: #2b4e72; //!
+$blue: #4271d6;
+$light-blue: #4e86ff;
+$lighter-blue: #6695ff;
+$light-sky: #a5c1ff;
+$blue-gray: #bec2d8; //!
+$dust-gray: #edf0f8;
+$gray: #818b98;
+$medium-gray: #a4abaf; //!
+$white-smoke: #c0c5cb;
+$silver: #d5dce7;
+$aluminum: #e2e7f4; //!
+$light-gray: #f6f7fb;
+$snow-white: #eff2ff;
+$transparent-gray: rgba(0, 0, 0, .15);
+$purple: #8d66b0; //!
+$red: #ff4545;
+$pink: #f87375;
+$light-pink: rgba(255, 69, 69, .15);
+$orange: #ff7b00;
+$green: #33cf89;
+$light-green: #96e8c3;
+
+
+// Border
+$base-border: 1px solid $aluminum;
+
+// Animations
+$base-duration: 300ms;
+$base-timing: ease;
+
+//header
+$top-header-height: 45px;
+
+//sidebar
+$sidebar-width: 220px;
+
+// product page admin side bar
+$admin-section-width: 220px;
+$admin-section-collapsed-width: 40px;
+
+//hero
+$hero-search-height: 41px;
+$content-sidebar-width: 270px;
